@@ -46,7 +46,7 @@ $breakpoints-map: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1980
 	}
 }
 
-// =====================base style==================
+// =====================null style==================
 
 * {
 	padding: 0;
@@ -88,29 +88,79 @@ img{vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6{font-style: inherit;font-weight: 400;}
 
-// =================base style ends==============
+// =================null style ends==============
+
+
+// =======================grid=======================
+
+.col-1 {
+	width: 8.33%
+}
+.col-2 {
+	width: 16.66%;
+}
+.col-3 {
+	width: 25%;
+}
+.col-4 {
+	width: 33.32%;
+}
+.col-5 {
+	width: 41.65%;
+}
+.col-6 {
+	width: 50%;
+}
+.col-7 {
+	width: 58.31%;
+}
+.col-8 {
+	width: 66.64%;
+}
+.col-9 {
+	width: 74.97%;
+}
+.col-10 {
+	width: 83.3%;
+}
+.col-11 {
+	width: 91.63%;
+}
+.col-12 {
+	width: 100%
+}
+
+// =======================grid ends=======================
+
+
+$black: #000000;
+$white: #ffffff;
+$green: #bddabc;
 
 .container {
 	max-width: 90%;
-	height: 768px;
 	margin: 0px auto;
 	padding: 0;
-	_cont-col {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
-	}
-	_cont-row {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+}
+
+._cont-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 768px;
+}
+
+._cont-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 768px;
 }
 
 
 body {
-	background-color: #000000;
+	background-color: $black;
 	font-family: 'Poppins', sans-serif;
 	font-size: 16px;
 }
@@ -120,8 +170,12 @@ section {
 	justify-content: center;
 }
 
+p {
+	line-height: 1.5;
+}
+
 .first-section {
-	color: #ffffff;
+	color: $white;
 }
 
 .header {
@@ -143,8 +197,8 @@ section {
 	}
 
 	a {
-		color: #bddabc;
-		border: 1px solid #bddabc;
+		color: $green;
+		border: 1px solid $green;
 		border-radius: 30px;
 		padding: 15px 60px;
 	}
@@ -169,64 +223,128 @@ section {
 
 .main-interior-container {
 	justify-self: end;
-	margin-bottom: 50px 0;
+	margin-bottom: 50px;
 	img {
 		width: 100%;
 		height: auto;
+		max-height: 450px;
 	}
 }
 
 .second-section {
-	background-color: #ffffff;
+	background-color: $white;
 	justify-content: space-between;
 	align-items: center;
-	color: #000000;
+	color: $black;
 }
 
 .about-me-container {
 	width: 40%;
-	padding: 50px;
+	padding: 50px 60px 50px 0;
 	h2 {
-		font-size: 14px;
+		font-size: 18px;
 	}
 	h3 {
-		font-size: 46px;
+		font-size: 61px;
 		font-family: 'EB Garamond', serif;
 		margin: 20px 0 30px;
 	}
 	p {
-		font-size: 12px;
+		font-size: 16px;
+		// line-height: 1.5;
 	}
 }
 
 .sec-image-container {
-	width: 50%;
+	width: 60%;
 	display: flex;
 	justify-content: flex-end;
 	img {
 		width: 100%;
 		height: auto;
-		padding-left: 30px;
+		max-height: 700px;
+		padding-left: 10px;
 	}
 }
 
 .third-section {
-	background-color: #bddabc;
+	background-color: $green;
 	justify-content: space-between;
-	color: #000000;
+	color: $black;
 	h2 {
-		font-size: 46px;
+		font-size: 61px;
 		font-family: 'EB Garamond', serif;
+		width: 30%;
+	}
+	:first-child {
+		align-items: start;
+	}
+	.container {
+		margin: 70px;
 	}
 }
 
 .resume {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 200px;
 	h3 {
 		font-weight: bold;
+		font-size: 18px;
 	}
-	div > {
-		padding: 20px 0 20px 20px;
+
+	p {
+		// line-height: 1.5;
+		margin: 10px 0;
+	}
+	.year {
+		font-weight: bold;
+		font-size: 18px;
+		margin: 0 50px;
+	}
+}
+
+.resume-cont {
+	width: 70%;
+}
+
+#hidden {
+	visibility: hidden;
+}
+
+.fourth-section {
+	color: $white;
+	h2 {
+		font-size: 61px;
+		font-family: 'EB Garamond', serif;
+		margin: 80px 0;
+	}
+	._cont-col {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+	}
+	._cont-row {
+		align-items: start;
+	}
+	h3 {
+		color: $green;
+	}
+	p {
+		margin: 20px 0;
+	}
+	.col-5 {
+		padding: 0 10px;
+	}
+}
+
+.fifth-section {
+	background-color: $white;
+	color: $black;
+	._cont-col {
+		justify-content: flex-end;
+	}
+	._cont-row {
+		align-items: end;
 	}
 }

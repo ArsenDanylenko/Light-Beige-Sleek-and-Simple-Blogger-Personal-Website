@@ -59,6 +59,10 @@ a:hover {
   text-decoration: none;
 }
 
+a, a:link, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
 ul li {
   list-style: none;
 }
@@ -242,16 +246,23 @@ img {
   font-weight: 400;
   font-style: normal;
 }
-.header a {
+.header__btn {
+  position: relative;
+}
+.header__btn a {
   color: #bddabc;
   border: 1px solid #bddabc;
   border-radius: 30px;
   padding: 15px 60px;
+  position: relative;
 }
-.header a:hover {
+.header__btn a:hover {
   background-color: #bddabc;
   color: #1b372d;
   border-color: #1b372d;
+}
+.header__btn a:active {
+  top: 2px;
 }
 @media (max-width: 991.9px) {
   .header {
@@ -757,6 +768,16 @@ img {
 }
 .sixth-section .simple-row .col-4 {
   width: 32.29%;
+  cursor: pointer;
+  position: relative;
+}
+.sixth-section .simple-row .col-4 img {
+  -webkit-transition: all 0.9s ease;
+  transition: all 0.9s ease;
+}
+.sixth-section .simple-row .col-4:hover img {
+  -webkit-transform: scale3d(0.9, 0.9, 0.9);
+          transform: scale3d(0.9, 0.9, 0.9);
 }
 .sixth-section .second-row {
   margin: 40px 0 62px;
@@ -882,8 +903,9 @@ img {
   line-height: 2;
 }
 .eight-section img {
-  width: 60%;
+  width: 100%;
   height: auto;
+  position: relative;
 }
 .eight-section .col-3 {
   -ms-flex-item-align: end;
@@ -891,6 +913,12 @@ img {
 }
 .eight-section .col-3 :last-child:not(a) {
   margin: 30px 0 50px;
+}
+.eight-section .col-3 a:hover img {
+  top: 2px;
+}
+.eight-section .col-3 a:active img {
+  top: 2px;
 }
 .eight-section .col-5 :last-child:not(div) {
   margin-top: 50px;

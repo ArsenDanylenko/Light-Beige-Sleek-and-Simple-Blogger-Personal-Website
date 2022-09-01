@@ -83,6 +83,7 @@ button{cursor: pointer;}
 button::-moz-focus-inner{padding: 0;border: 0;}
 a, a:visited{text-decoration: none;}
 a:hover{text-decoration: none;}
+a, a:link, a:visited, a:hover, a:active {color: inherit;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 
@@ -221,16 +222,22 @@ img {
 		font-weight: 400;
 		font-style: normal;
 	}
-
-	a {
-		color: $green;
-		border: 1px solid $green;
-		border-radius: 30px;
-		padding: 15px 60px;
-		&:hover {
-			background-color: $green;
-			color: $dark;
-			border-color: $dark;
+	&__btn {
+		position: relative;
+		a {
+			color: $green;
+			border: 1px solid $green;
+			border-radius: 30px;
+			padding: 15px 60px;
+			position: relative;
+			&:hover {
+				background-color: $green;
+				color: $dark;
+				border-color: $dark;
+			}
+			&:active {
+				top: 2px;
+			}
 		}
 	}
 
@@ -641,6 +648,16 @@ img {
 	.simple-row {
 		.col-4 {
 			width: 32.29%;
+			cursor: pointer;
+			position: relative;
+			img {
+				transition: all 0.9s ease;
+			}
+			&:hover {
+				img {
+					transform: scale3d(0.9, 0.9, 0.9);
+				}
+			}
 		}
 		justify-content: space-between;
 	}
@@ -756,14 +773,25 @@ img {
 		line-height: 2;
 	}
 	img {
-		width: 60%;
+		width: 100%;
 		height: auto;
+		position: relative;
 	}
 
 	.col-3 {
 		align-self: end;
 		:last-child:not(a) {
 			margin: 30px 0 50px;
+		}
+		a:hover {
+			img {
+				top: 2px;
+			}
+		}
+		a:active {
+			img {
+				top: 2px;
+			}
 		}
 	}
 	.col-5 {

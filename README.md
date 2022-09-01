@@ -1,2 +1,2 @@
-# Light-Beige-Sleek-and-Simple-Blogger-Personal-Website
+# Viggo Cimmaron
 This is a landing template from Canva.com
